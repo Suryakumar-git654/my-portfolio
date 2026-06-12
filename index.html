@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Cloud & DevOps Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="nav">
+    <div class="brand"><i class="fa-solid fa-cloud"></i> YourName</div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <span class="eyebrow">Cloud & DevOps Engineer</span>
+      <h1>Hi, I'm <span class="accent">Your Name</span></h1>
+      <p>I build cloud-native infrastructure and deploy applications reliably at scale.</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="#projects">View Projects</a>
+        <a class="btn btn-outline" href="#contact">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-badges">
+      <span><i class="fa-brands fa-aws"></i> AWS</span>
+      <span><i class="fa-brands fa-docker"></i> Docker</span>
+      <span><i class="fa-solid fa-infinity"></i> CI/CD</span>
+      <span><i class="fa-solid fa-server"></i> Linux</span>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <p class="about-text">
+        I'm a Cloud & DevOps enthusiast passionate about automation, scalability, and reliability.
+        Currently building hands-on experience with AWS services, containerization, and infrastructure as code.
+      </p>
+      <div class="skills-grid">
+        <div class="skill-item"><i class="fa-brands fa-aws"></i> S3 / CloudFront</div>
+        <div class="skill-item"><i class="fa-brands fa-docker"></i> Docker</div>
+        <div class="skill-item"><i class="fa-solid fa-code-branch"></i> GitHub Actions</div>
+        <div class="skill-item"><i class="fa-solid fa-cubes"></i> Terraform</div>
+        <div class="skill-item"><i class="fa-brands fa-linux"></i> Linux</div>
+        <div class="skill-item"><i class="fa-solid fa-shield-halved"></i> IAM / Security</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-title">Projects</h2>
+      <div class="cards">
+
+        <article class="card">
+          <div class="card-icon"><i class="fa-brands fa-aws"></i></div>
+          <h3>Static Portfolio on AWS S3</h3>
+          <p>Hosted this portfolio on Amazon S3 with CloudFront CDN for global HTTPS delivery.</p>
+          <div class="card-tags">
+            <span>S3</span><span>CloudFront</span><span>HTTPS</span><span>HTML/CSS</span>
+          </div>
+          <a href="#" class="card-link"><i class="fa-brands fa-github"></i> View on GitHub</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon"><i class="fa-brands fa-docker"></i></div>
+          <h3>Dockerized Node.js App</h3>
+          <p>Containerized a Node.js REST API using Docker with multi-stage builds.</p>
+          <div class="card-tags">
+            <span>Docker</span><span>Node.js</span><span>CI/CD</span><span>GitHub Actions</span>
+          </div>
+          <a href="#" class="card-link"><i class="fa-brands fa-github"></i> View on GitHub</a>
+        </article>
+
+        <article class="card">
+          <div class="card-icon"><i class="fa-solid fa-cubes"></i></div>
+          <h3>AWS Infrastructure with Terraform</h3>
+          <p>Provisioned AWS environment (VPC, EC2, RDS, S3) using Terraform IaC.</p>
+          <div class="card-tags">
+            <span>Terraform</span><span>EC2</span><span>VPC</span><span>IaC</span>
+          </div>
+          <a href="#" class="card-link"><i class="fa-brands fa-github"></i> View on GitHub</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="footer">
+    <div class="container">
+      <h2 class="section-title light">Get in Touch</h2>
+      <p class="footer-sub">Open to internships, collaborations, and cloud projects.</p>
+      <div class="social-links">
+        <a href="mailto:you@example.com"><i class="fa-solid fa-envelope"></i> you@example.com</a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+      </div>
+      <p class="copyright">© 2025 Your Name. Hosted on AWS S3 + CloudFront.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
