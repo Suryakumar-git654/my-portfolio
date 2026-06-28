@@ -1,0 +1,95 @@
+# My Cloud Portfolio — AWS S3 + CloudFront
+
+A responsive single-page portfolio hosted on AWS S3 and served globally via CloudFront (HTTPS).
+
+## 🌐 Live URL
+> https://your-cloudfront-id.cloudfront.net *(replace after deployment)*
+
+---
+
+## 📁 Project Structure
+```
+my-portfolio/
+├── index.html       # Main portfolio page
+├── styles.css       # All styles
+└── README.md        # This file
+```
+
+---
+
+## 🚀 Deployment Steps
+
+### 1. Create S3 Bucket
+```bash
+# Create bucket (replace YOUR-NAME)
+aws s3 mb s3://yourname-portfolio --region us-east-1
+
+# Enable static website hosting
+aws s3 website s3://yourname-portfolio \
+  --index-document index.html \
+  --error-document index.html
+```
+
+### 2. Set Bucket Policy (Public Read)
+Create a file `policy.json`:
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::yourname-portfolio/*"
+    }
+  ]
+}
+```
+Apply it:
+```bash
+aws s3api put-bucket-policy \
+  --bucket yourname-portfolio \
+  --policy file://policy.json
+```
+
+### 3. Disable Block Public Access
+- Go to S3 Console → Your Bucket → Permissions
+- Turn OFF "Block all public access"
+
+### 4. Upload Files
+```bash
+aws s3 sync . s3://yourname-portfolio --exclude "*.md" --acl public-read
+```
+
+### 5. Test S3 Endpoint
+Visit: `http://yourname-portfolio.s3-website-us-east-1.amazonaws.com`
+
+### 6. Create CloudFront Distribution
+- Go to **CloudFront Console** → Create Distribution
+- Origin Domain: Select your S3 bucket website endpoint
+- Viewer Protocol Policy: **Redirect HTTP to HTTPS**
+- Default Root Object: `index.html`
+- Click **Create Distribution** (takes ~10 minutes to deploy)
+
+### 7. Access via HTTPS
+Visit: `https://YOUR_CLOUDFRONT_ID.cloudfront.net`
+
+---
+
+## 🛠️ Technologies Used
+- HTML5 / CSS3
+- AWS S3 (Static Website Hosting)
+- AWS CloudFront (CDN + HTTPS)
+- Google Fonts (Space Grotesk, Inter)
+- Font Awesome 6 (Icons)
+- Git + GitHub (Version Control)
+
+---
+
+## 📸 Screenshots
+*(Add screenshots of your CloudFront distribution and S3 bucket policy here)*
+
+---
+
+© 2025 Your Name
